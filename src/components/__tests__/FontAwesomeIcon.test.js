@@ -301,7 +301,7 @@ describe('duotone support', () => {
           color: 'blue'
         }
       })
-      const tree = renderer.create(<FontAwesomeIcon icon={ faAcorn } style={ styles.icon } secondaryColor={ "red" } />).toJSON()
+      const tree = renderer.create(<FontAwesomeIcon icon={ faAcorn } style={ styles.icon } secondarycolor={ "red" } />).toJSON()
       const secondaryLayer = tree.children[0].children[0].children[0]
       expect(getActualFillColorHex(secondaryLayer)).toEqual(redHex)
       expect(secondaryLayer.props.fillOpacity).toEqual(1)
@@ -314,7 +314,7 @@ describe('duotone support', () => {
           color: 'blue'
         }
       })
-      const tree = renderer.create(<FontAwesomeIcon icon={ faAcorn } style={ styles.icon } secondaryColor={ "red" } secondaryOpacity={ 0.123 } />).toJSON()
+      const tree = renderer.create(<FontAwesomeIcon icon={ faAcorn } style={ styles.icon } secondarycolor={ "red" } secondaryOpacity={ 0.123 } />).toJSON()
       const secondaryLayer = tree.children[0].children[0].children[0]
       expect(getActualFillColorHex(secondaryLayer)).toEqual(redHex)
       expect(secondaryLayer.props.fillOpacity).toEqual(0.123)

@@ -49,8 +49,8 @@ function convert(createElement, element) {
   var isDuotone = (element.children || []).length === 2;
   var children = (element.children || []).map(function (child, childIndex) {
     var isDuotoneSecondLayer = isDuotone && childIndex === 0;
-    var fill = isDuotoneSecondLayer ? extraProps.secondaryFill : extraProps.fill;
-    var fillOpacity = isDuotoneSecondLayer ? extraProps.secondaryOpacity : 1;
+    var fill = isDuotoneSecondLayer ? extraProps.secondaryfill : extraProps.fill;
+    var fillOpacity = isDuotoneSecondLayer ? extraProps.secondaryopacity : 1;
     return convert(createElement, child, _objectSpread(_objectSpread({}, extraProps), {}, {
       fill: fill,
       fillOpacity: fillOpacity

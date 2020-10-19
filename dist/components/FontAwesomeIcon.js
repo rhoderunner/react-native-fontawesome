@@ -98,9 +98,9 @@ function FontAwesomeIcon(props) {
   var color = props.color || style.color || DEFAULT_COLOR; // This is the color that will be passed to the "fill" prop of the secondary Path element child (in Duotone Icons)
   // `null` value will result in using the primary color, at 40% opacity
 
-  var secondaryColor = props.secondaryColor || null; // Secondary layer opacity should default to 0.4, unless a specific opacity value or a specific secondary color was given
+  var secondarycolor = props.secondarycolor || null; // Secondary layer opacity should default to 0.4, unless a specific opacity value or a specific secondary color was given
 
-  var secondaryOpacity = props.secondaryOpacity || (secondaryColor ? 1 : DEFAULT_SECONDARY_OPACITY); // To avoid confusion down the line, we'll remove properties from the StyleSheet, like color, that are being overridden
+  var secondaryopacity = props.secondaryopacity || (secondarycolor ? 1 : DEFAULT_SECONDARY_OPACITY); // To avoid confusion down the line, we'll remove properties from the StyleSheet, like color, that are being overridden
   // or resolved in other ways, to avoid ambiguity as to which inputs cause which outputs in the underlying rendering process.
   // In other words, we don't want color (for example) to be specified via two different inputs.
 
@@ -126,8 +126,8 @@ function FontAwesomeIcon(props) {
     height: resolvedHeight,
     width: resolvedWidth,
     fill: color,
-    secondaryFill: secondaryColor,
-    secondaryOpacity: secondaryOpacity,
+    secondaryfill: secondarycolor,
+    secondaryopacity: secondaryopacity,
     style: modifiedStyle
   };
   Object.keys(props).forEach(function (key) {
@@ -144,8 +144,8 @@ FontAwesomeIcon.propTypes = {
   width: _propTypes["default"].number,
   size: _propTypes["default"].number,
   color: _propTypes["default"].string,
-  secondaryColor: _propTypes["default"].string,
-  secondaryOpacity: _propTypes["default"].number,
+  secondarycolor: _propTypes["default"].string,
+  secondaryopacity: _propTypes["default"].number,
   style: _propTypes["default"].oneOfType([_propTypes["default"].shape({
     style: _propTypes["default"].any
   }), _propTypes["default"].array]),
@@ -159,8 +159,8 @@ FontAwesomeIcon.defaultProps = {
   transform: null,
   style: {},
   color: null,
-  secondaryColor: null,
-  secondaryOpacity: null,
+  secondarycolor: null,
+  secondaryopacity: null,
   height: undefined,
   width: undefined // Once the deprecation of height and width props is complete, let's put the real default prop value for size here.
   // For now, adding it breaks the default/override logic for height/width/size.
